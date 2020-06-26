@@ -6,11 +6,11 @@ printf "Usage: ./searchsploit_helper.sh <searchsploit search terms>\n\nResults f
 else
 	mkdir $1
 	searchsploit $@
+	cd $1
 	for e in $(searchsploit $@ -w -t | grep http | cut -f 2 -d "|")
 	do
 		exp_name=$(echo $e | cut -d "/" -f 5)
-		url=$(echo $e | sed 's/exploits/raw/')
-		wget -q --no-check-certificate $url -O $1/$exp_name
+		searchsploit -m $exp_name 1>/dev/null
 done
 printf "\nYour results have successfully been downloaded to the $1 directory\n\n"
 
