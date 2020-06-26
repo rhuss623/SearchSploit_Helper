@@ -19,7 +19,15 @@ Perform searches:
 e.g. ./searchsploit_helper.sh filezilla
 ```
 
-Usage suggestion:
+Exploits are downloaded to a new directory named after the first argument:
+```
+$ cd filezilla
+$ ls
+1336.cpp  26220.c  2901.php  2914.php  37286.py  37729.py  39803.txt
+```
+
+
+### Usage suggestion:
 
 I have personally added the following line to .bash_aliases:
 ```
